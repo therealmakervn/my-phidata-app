@@ -5,7 +5,7 @@ services:
     branch: main
     repo_clone_url: https://github.com/your-username/your-repo.git
   build_command: pip install -r requirements.txt
-  run_command: gunicorn --worker-tmp-dir /dev/shm api.main:app -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT
+  run_command: streamlit run app/streamlit_app.py --server.port $PORT
   environment_slug: python
   envs:
   - key: PYTHONPATH

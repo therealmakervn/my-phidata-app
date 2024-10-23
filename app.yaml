@@ -1,0 +1,10 @@
+name: my-phidata-app
+services:
+- name: web
+  github:
+    repo: therealmakervn/my-phidata-app
+    branch: main
+  envs:
+  - key: PORT
+    value: "8080"
+

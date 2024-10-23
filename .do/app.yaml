@@ -5,7 +5,8 @@ services:
     branch: main
     repo_clone_url: https://github.com/therealmakervn/my-phidata-app.git
     build_command: pip install -r requirements.txt
-  run_command: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+  # Thay đổi run_command để chỉ định đúng đường dẫn
+  run_command: cd /workspace && python -m uvicorn api.main:app --host 0.0.0.0 --port $PORT
   environment_slug: python
   instance_count: 1
   instance_size_slug: basic-xxs
